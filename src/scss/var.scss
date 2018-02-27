@@ -1,1 +1,21 @@
-$gray : #666;
+// colors
+
+$primary : #b63582;
+$primary-light: #c14d9c;
+$main-font : #676766;
+$red : #be4c6f;
+$white :#ffffff;
+
+@mixin abel{
+    font-family: 'Abel', sans-serif;
+}
+
+@mixin transition{
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin bg-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}

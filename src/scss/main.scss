@@ -3,13 +3,584 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    @include abel;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-.wrapper{
-    display: flex;
+a{
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.header{
+    //height: 250px;
     width: 100%;
+    padding: 70px 0 0 0;
+    .header-underlined{
+        border-bottom: 1px solid $primary-light;
+    }
+}
+
+.social-lang{
+    display: flex;
+    justify-content: flex-end;
+
+    .langs,
+    .socials{
+        display: flex;
+    }
+
+    .lang{
+        padding-right: 15px;
+
+        .langs{
+            li{
+                a{
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        
+    }
+
+    .social{
+        .socials{
+            li{
+                a{
+                    padding-left: 15px;
+                    svg{
+                        fill: $primary-light;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.cds-nav{
+    display: flex;
+    justify-content: flex-end;
+
+    .cds-navigarion{
+        display: flex;
+
+        li{
+            a{
+                padding-left: 15px;
+                font-size: 14px;
+                color: $main-font;
+                &:hover{
+                    color: $red;
+                }
+                &.active{
+                    color: $red;
+                }
+            }
+        }
+    }
+}
+
+.intro{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    h1,p{
+        text-align: right;
+    }
+
+    h1{
+        font-size: 20px;
+        color: $primary-light;
+    }
+
+    p{
+        font-size: 15px;
+        color: $main-font;
+        line-height: 20px;
+        max-width: 550px;
+    }
+}
+
+.portfolio-section{
+    .portfolio-sort{
+        padding: 60px 0;
+
+        .sort-by{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            li{
+                padding: 0 1rem;
+                &.active{
+                    a{
+                        color: $primary-light;
+                    }
+                }
+                &:after{
+                    content: '/';
+                    display: inline-block;
+                    padding: 0 0 0 1rem;
+                }
+                &:last-child{
+                    &:after{
+                        content: '';
+                        display: none;
+                    }
+                }
+
+                a{
+                    color: $main-font;
+                    @include transition;
+                    &:hover{
+                        color: $primary-light;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+.portfolio-tiles{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .tile{
+        width: 25%;
+        padding: 2px;
+        opacity: 0;
+        animation: tileIn 0.8s ease-in-out forwards;
+        &:hover{
+            .tile-info{
+                transform: translate(0);
+                opacity: 1;
+
+                h2{
+                    transform: translate(0);
+                    opacity: 1;
+                }
+
+                p{
+                    opacity: 1;
+                }
+            }
+        }
+
+        .tile-inner{
+            width: 100%;
+            background: cornflowerblue;
+            box-sizing: border-box;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            &.tile1{
+                background: url(../images/tile1.jpg);
+                @include bg-cover;
+            }
+            &.tile2{
+                background: url(../images/tile2.jpg);
+                @include bg-cover;
+            }
+            &.tile3{
+                background: url(../images/tile3.jpg);
+                @include bg-cover;
+            }
+            &.tile4{
+                background: url(../images/tile4.jpg);
+                @include bg-cover;
+            }
+            
+        }
+
+        .tile-info{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-content: center;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: #000000, $alpha: 0.9);
+            transform: translate(0, 101%);
+            opacity: 0;
+            @include transition;
+            h2{
+                color: $primary-light;
+                transform: translate(-110%);
+                opacity: 0;
+                @include transition; 
+                transition-delay: 0.2s;
+            }
+            p{
+                color: $white;
+                opacity: 0;
+                @include transition; 
+                transition-delay: 0.4s;
+            }
+        }
+    }
+}
+
+.show-more{
+    display: flex;
     justify-content: center;
-    align-items: center;
-    background: #f1f1f1;
+    padding: 30px;
+    a{
+        color: $red;
+        font-size: 20px;
+    }
+}
+
+.innovation-section{
+    h2,h1{
+        font-size: 75px;
+        line-height: 70px;
+    }
+    h1{
+        color: $primary-light;
+    }
+    h2{
+        color: $main-font;
+    }
+    h4{
+        font-size: 25px;
+        color: $primary-light;
+    }
+
+    .work-flow-section{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 80%;
+            height: 80%;
+            max-width: 1200px;
+        }
+        &.mobile{
+            display: none;
+        }
+    }
+    .lets-create-section{
+        padding: 80px 0;
+        text-align: center;
+        h2{
+            font-size: 50px;
+            line-height: 40px;
+            color: $main-font;
+            span{
+                color: $primary-light;
+            }
+        }
+        h4{
+            font-size: 20px;
+            color: $main-font;
+        }
+    }
+    .info-cols{
+        .col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px;
+        }
+
+        .col-image{
+            height: 192px;
+            img{
+                width: 100%;
+            }
+        }
+
+        .col-info{
+            text-align: center;
+            h2{
+                font-size: 28px;
+            }
+            p{
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.clients-section{
+    h2{
+        text-align: center;
+        color: $primary-light;
+        text-transform: uppercase;
+        font-size: 35px;
+        padding-bottom: 80px;
+    }
+    .clients{
+        width: 100%;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            justify-content: space-between;
+            li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    padding: 0 40px 40px 40px;
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $primary;
+
+    span{
+        display: block;
+        padding: 20px 0 80px 0;
+        color: $primary-light;
+    }
+}
+
+
+
+
+
+
+@keyframes tileIn {
+    0% {
+        transform: translate(-100%, 200%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+@for $i from 1 through 16 {
+    $postDelay: 0.5;
+    $animationDelay: $i/8 + $postDelay - 0.5 - (1/8) + 's';
+    .portfolio-tiles .tile:nth-child(#{$i}) {
+        animation-delay: #{$animationDelay};
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .logo-wrapper{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+
+    .social-wrapper{
+        display: flex;
+    }
+
+    .social-lang,
+    .cds-nav{
+        justify-content: center;
+    }
+    .intro {
+        align-items: center;
+        h1,p{
+            text-align: center;
+        }
+    }
+    .portfolio-section{
+        padding-top: 40px;
+    }
+    .portfolio-sort{
+        display: none;
+    }
+    .portfolio-tiles{
+        .tile{
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .lang{
+        display: none;
+    }
+    .social{
+        width: 100%;
+        border-top: 1px solid $primary;
+        border-bottom: 1px solid $primary;
+        margin-bottom: 20px;
+    }
+    .socials{
+        justify-content: space-between;
+        margin: 0;
+        li{
+            padding: 12px 12px 10px 12px;
+        }
+    }
+    
+    .cds-nav{
+        display: none;
+    }
+
+    .header-underlined{
+        border: none !important;
+    }
+
+    .portfolio-tiles{
+        .tile{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .innovation-section h2, .innovation-section h1 {
+        font-size: 35px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .innovation-section h4 {
+        font-size: 15px;
+        color: #c14d9c;
+        text-align: center;
+        margin: 20px;
+    }
+    .innovation-section{
+        .work-flow-section{
+            display: none ;
+            justify-content: center;
+            img{
+                width: 90%;
+                height: 90%;
+                max-width: 1200px;
+            }
+            &.mobile{
+                display: flex ;
+                justify-content: flex-end;
+            }
+        }
+        .lets-create-section{
+            padding: 80px 0 40px 0;
+            h2{
+                font-size: 35px;
+                line-height: 30px;
+                span{
+                    color: $primary-light;
+                }
+            }
+            h4{
+                font-size: 15px;
+                color: $main-font;
+            }
+        }
+        .info-cols{
+            .col{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 80px;
+            }
+    
+            .col-image{
+                height: 192px;
+                img{
+                    width: 100%;
+                }
+            }
+    
+            .col-info{
+                text-align: center;
+                h2{
+                    font-size: 28px;
+                }
+                p{
+                    font-size: 15px;
+                    width: 80%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    .clients-section{
+        .clients{
+            width: 100%;
+            ul{
+                li{
+                    width: 100%;
+                    img{
+                        padding: 20px 0;
+                        max-width: 80%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+    
+        span{
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+
+    .portfolio-tiles{
+    
+        .tile{
+            
+            .tile-info{
+                transform: translate(0);
+                opacity: 1;
+
+                h2{
+                    transform: translate(0);
+                    opacity: 1;
+                }
+
+                p{
+                    opacity: 1;
+                }
+            }
+            
+    
+            .tile-inner{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                height: 350px;
+            }
+    
+            .tile-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-content: center;
+                text-align: center;
+                width: 100%;
+                height: auto;
+                background: #fff;
+                @include transition;
+                h2{
+                    padding-top: 10px;
+                }
+                p{
+                    color: $main-font;
+                }
+            }
+        }
+    }
+    
 }
