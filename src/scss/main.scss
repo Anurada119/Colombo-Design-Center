@@ -9,6 +9,71 @@
     box-sizing: border-box;
 }
 
+.inner-h1{
+   font-size: 55px;
+   line-height: 1.5;
+   color: $primary;
+   margin: 0 0 24px 0;
+}
+
+.inner-h2{
+   font-size: 30px;
+   color: $main-font;
+   margin: 0;
+}
+
+.project-h1{
+   font-size: 55px;
+}
+
+.project-h3{
+   font-size: 20px;
+}
+
+.project-h1,
+.project-h3{
+   color: $white;
+   text-transform: uppercase;
+}
+
+.project-process-heading{
+   font-size: 20px;
+   color: $main-font;
+}
+
+.project-process-content{
+   font-size: 15px;
+   color: $main-font;
+}
+
+.inner-h3{
+   font-size: 35px;
+   color: $primary;
+   margin: 0 0 48px 0;
+}
+
+.article-content{
+   font-size: 20px;
+   color: $main-font;
+   margin: 0 0 32px 0;
+   &.signature{
+      margin: 48px 0 32px 0;
+   }
+}
+
+.article-images{
+   width: 100%;
+   margin: 0 0 32px 0;
+}
+
+.tagline{
+   font-size: 20px;
+   font-style: italic;
+   color: $main-font;
+   line-height: 24px;
+   letter-spacing: 3px;
+}
+
 a{
     &:hover{
         text-decoration: none;
@@ -22,6 +87,18 @@ a{
     .header-underlined{
         border-bottom: 1px solid $primary-light;
     }
+}
+
+.container,
+.col,
+.col-12{
+   padding-left: 0;
+   padding-right: 0;
+}
+
+.row{
+   margin-left: 0;
+   margin-right: 0;
 }
 
 .social-lang{
@@ -44,7 +121,7 @@ a{
             }
         }
 
-        
+
     }
 
     .social{
@@ -141,7 +218,7 @@ a{
                     &:hover{
                         color: $primary-light;
                     }
-                    
+
                 }
             }
         }
@@ -199,7 +276,7 @@ a{
                 background: url(../images/tile4.jpg);
                 @include bg-cover;
             }
-            
+
         }
 
         .tile-info{
@@ -218,13 +295,13 @@ a{
                 color: $primary-light;
                 transform: translate(-110%);
                 opacity: 0;
-                @include transition; 
+                @include transition;
                 transition-delay: 0.2s;
             }
             p{
                 color: $white;
                 opacity: 0;
-                @include transition; 
+                @include transition;
                 transition-delay: 0.4s;
             }
         }
@@ -326,13 +403,16 @@ a{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             li{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                width: 25%;
                 img{
                     padding: 0 40px 40px 40px;
+                    max-width: 100%;
+                    max-height: 180px;
                 }
             }
         }
@@ -344,16 +424,26 @@ a{
     justify-content: space-between;
     border-top: 1px solid $primary;
 
-    span{
-        display: block;
-        padding: 20px 0 80px 0;
-        color: $primary-light;
-    }
+
 }
 
+.footerr{
+   padding: 20px 0 80px 0;
+}
 
+.footer-section{
+   span{
+      display: block;
+      color: $primary-light;
+      margin-bottom: 20px;
+      &.right{
+         text-align: right;
+      }
+   }
+}
 
-
+///////////////////////////////////////////////////
+@import 'project';
 
 
 @keyframes tileIn {
@@ -375,8 +465,118 @@ a{
     }
 }
 
+@media only screen and (max-width: 991px){
+   .footer-section{
+      span{
+         &.right{
+            text-align: left;
+         }
+      }
+   }
+
+   .split-section{
+      .left-column{
+         padding: 0px;
+      }
+      .right-colomn{
+         padding: 0px;
+      }
+   }
+
+   .separation-tag{
+      margin-bottom: 56px;
+      p{
+         text-align: center;
+         font-size: 20px;
+         color: $main-font;
+         width: 100%;
+         line-height: 56px;
+         border-bottom: 1px solid $primary;
+         border-top: 1px solid $primary;
+
+      }
+   }
+
+   .news-section{
+      .row{
+         div:first-child{
+            padding-right: 0px;
+         }
+         div:nth-child(even){
+            padding-left: 0px;
+         }
+      }
+      .row:nth-child(even){
+         div:nth-child(even){
+            order: 1;
+         }
+         div:nth-child(odd){
+            order: 2;
+         }
+      }
+      .news-list-images{
+         margin-bottom: 24px;
+      }
+   }
+
+   .news-banner{
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 350px;
+      .news-banner-content{
+         width: 100%;
+         padding-top: 40px;
+         text-align: center;
+         .read-more{
+            cursor: pointer;
+         }
+         a{
+            display: block;
+         }
+         img{
+            width: 100%;
+            display: block;
+         }
+         .inner-h1{
+            font-size: 35px;
+         }
+         .inner-h2{
+            font-size: 20px;
+         }
+      }
+      .news-banner-image{
+         display: none;
+      }
+   }
+
+   .project-process{
+      .project-grid{
+         .prject-grid-main-img{
+            margin-bottom: 20px;
+            min-height: 500px;
+         }
+
+         .grid-left{
+            padding-right: 0px;
+         }
+
+         .grid-right{
+            padding-left: 0px;
+         }
+
+         .project-grid-small-img{
+            height: 240px;
+         }
+      }
+   }
+
+}
 
 @media only screen and (max-width: 768px){
+   .wrapper{
+      padding-left: 15px;
+      padding-right: 15px;
+   }
     .logo-wrapper{
         display: flex;
         justify-content: center;
@@ -408,6 +608,8 @@ a{
             width: 50%;
         }
     }
+
+
 }
 
 @media only screen and (max-width: 480px){
@@ -427,7 +629,7 @@ a{
             padding: 12px 12px 10px 12px;
         }
     }
-    
+
     .cds-nav{
         display: none;
     }
@@ -490,14 +692,14 @@ a{
                 align-items: center;
                 padding-bottom: 80px;
             }
-    
+
             .col-image{
                 height: 192px;
                 img{
                     width: 100%;
                 }
             }
-    
+
             .col-info{
                 text-align: center;
                 h2{
@@ -513,14 +715,17 @@ a{
     }
 
     .clients-section{
+      h2{
+         padding-bottom: 20px;
+      }
         .clients{
             width: 100%;
             ul{
                 li{
-                    width: 100%;
+                    width: 50%;
                     img{
-                        padding: 20px 0;
-                        max-width: 80%;
+                        padding: 40px 0;
+                        max-width: 60%;
                     }
                 }
             }
@@ -530,7 +735,7 @@ a{
     .footer{
         display: flex;
         flex-direction: column;
-    
+
         span{
             padding: 10px 0;
             text-align: center;
@@ -538,9 +743,9 @@ a{
     }
 
     .portfolio-tiles{
-    
+
         .tile{
-            
+
             .tile-info{
                 transform: translate(0);
                 opacity: 1;
@@ -554,15 +759,15 @@ a{
                     opacity: 1;
                 }
             }
-            
-    
+
+
             .tile-inner{
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
                 height: 350px;
             }
-    
+
             .tile-info{
                 display: flex;
                 flex-direction: column;
@@ -582,5 +787,26 @@ a{
             }
         }
     }
-    
+
+    .project-process{
+      .project-grid{
+         .prject-grid-main-img{
+            margin-bottom: 20px;
+            min-height: 320px;
+         }
+
+         .grid-left{
+            padding-right: 0px;
+         }
+
+         .grid-right{
+            padding-left: 0px;
+         }
+
+         .project-grid-small-img{
+            height: 160px;
+         }
+      }
+   }
+
 }
