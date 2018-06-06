@@ -180,7 +180,7 @@ a:hover {
 }
 
 .portfolio-section .portfolio-sort .sort-by li {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .portfolio-section .portfolio-sort .sort-by li.active a {
