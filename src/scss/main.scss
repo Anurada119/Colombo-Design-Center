@@ -10,6 +10,16 @@
     transition: all 0.3s ease-in-out;
 }
 
+.main-color{
+    color: $primary !important;
+}
+
+.home-page-intro{
+    font-size: 28px;
+    font-weight: 500;
+    padding: 24px 30px;
+}
+
 input[type=text],
 textarea,
 select{
@@ -176,7 +186,7 @@ a{
         li{
             a{
                 padding-left: 15px;
-                font-size: 14px;
+                font-size: 17px;
                 color: $main-font;
                 &:hover{
                     color: $red;
@@ -259,7 +269,7 @@ a{
 
     .tile{
         width: 25%;
-        padding: 2px;
+        padding: 4px;
         opacity: 0;
         animation: tileIn 0.8s ease-in-out forwards;
         &:hover{
@@ -359,6 +369,11 @@ a{
     h4{
         font-size: 25px;
         color: $primary-light;
+    }
+    &.home-banner{
+        .lets-create-section{
+            padding: 70px 0 20px;
+        }
     }
 
     .work-flow-section{
@@ -792,6 +807,24 @@ a{
     }
 }
 
+.header{
+    &.home-page-header{
+        .intro{
+            display: none;
+        }
+        .header-underlined{
+            border: none;
+        }
+        .home-header-fix{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .cds-navigarion{
+            margin-bottom: 0;
+        }
+    }
+} 
 
 ///////////////////////////////////////////////////
 @import 'project';

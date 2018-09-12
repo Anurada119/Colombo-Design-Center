@@ -8,6 +8,16 @@
   transition: all 0.3s ease-in-out;
 }
 
+.main-color {
+  color: #b63582 !important;
+}
+
+.home-page-intro {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 24px 30px;
+}
+
 input[type=text],
 textarea,
 select {
@@ -162,7 +172,7 @@ a:hover {
 
 .cds-nav .cds-navigarion li a {
   padding-left: 15px;
-  font-size: 14px;
+  font-size: 17px;
   color: #676766;
 }
 
@@ -242,7 +252,7 @@ a:hover {
 
 .portfolio-tiles .tile {
   width: 25%;
-  padding: 2px;
+  padding: 4px;
   opacity: 0;
   animation: tileIn 0.8s ease-in-out forwards;
 }
@@ -355,6 +365,10 @@ a:hover {
 .innovation-section h4 {
   font-size: 25px;
   color: #c14d9c;
+}
+
+.innovation-section.home-banner .lets-create-section {
+  padding: 70px 0 20px;
 }
 
 .innovation-section .work-flow-section {
@@ -799,6 +813,24 @@ a:hover {
   text-align: right;
   padding-right: 20px;
   line-height: 40px;
+}
+
+.header.home-page-header .intro {
+  display: none;
+}
+
+.header.home-page-header .header-underlined {
+  border: none;
+}
+
+.header.home-page-header .home-header-fix {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.header.home-page-header .cds-navigarion {
+  margin-bottom: 0;
 }
 
 .project-banner {
