@@ -184,15 +184,46 @@ a{
         display: flex;
 
         li{
+            position: relative;
+            &:hover{
+                .drop-down{
+                    transform: rotateX(0);
+                    transform-origin: top;
+                    opacity: 1;
+                }   
+            }
             a{
                 padding-left: 15px;
                 font-size: 17px;
                 color: $main-font;
                 &:hover{
                     color: $red;
+                    
                 }
                 &.active{
                     color: $red;
+                }
+            }
+
+            .drop-down{
+                display: block;
+                position: absolute;
+                background: $white;
+                left:5px;
+                top: 20px;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.16);
+                opacity: 0;
+                transform: rotateX(90deg);
+                transform-origin: top;
+
+                li{
+                    padding: 4px 0;
+                    color: $primary;
+                    &:hover{
+                        color: $primary-light;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -324,13 +355,14 @@ a{
             text-align: center;
             width: 100%;
             height: 100%;
-            background: rgba($color: #000000, $alpha: 0.9);
-            transform: translate(0, 101%);
+            background: rgba($color: #000000, $alpha: 0.75);
+            transform: translate(0);
             opacity: 0;
-            @include transition;
+            transition: all 0.5s ease-in-out;
             h2{
-                color: $primary-light;
-                transform: translate(-110%);
+                color: $primary;
+                transform: translate(0, 20px);
+                font-weight: bold;
                 opacity: 0;
                 @include transition;
                 transition-delay: 0.2s;
@@ -832,7 +864,7 @@ a{
 
 @keyframes tileIn {
     0% {
-        transform: translate(-100%, 200%) scale(0);
+        transform: translate(0, 0) scale(0.95);
         opacity: 0;
     }
     100% {

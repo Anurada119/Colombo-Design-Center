@@ -170,6 +170,16 @@ a:hover {
   display: flex;
 }
 
+.cds-nav .cds-navigarion li {
+  position: relative;
+}
+
+.cds-nav .cds-navigarion li:hover .drop-down {
+  transform: rotateX(0);
+  transform-origin: top;
+  opacity: 1;
+}
+
 .cds-nav .cds-navigarion li a {
   padding-left: 15px;
   font-size: 17px;
@@ -182,6 +192,29 @@ a:hover {
 
 .cds-nav .cds-navigarion li a.active {
   color: #be4c6f;
+}
+
+.cds-nav .cds-navigarion li .drop-down {
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  left: 5px;
+  top: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+
+.cds-nav .cds-navigarion li .drop-down li {
+  padding: 4px 0;
+  color: #b63582;
+}
+
+.cds-nav .cds-navigarion li .drop-down li:hover {
+  color: #c14d9c;
+  cursor: pointer;
 }
 
 .intro {
@@ -317,15 +350,16 @@ a:hover {
   text-align: center;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  transform: translate(0, 101%);
+  background: rgba(0, 0, 0, 0.75);
+  transform: translate(0);
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .portfolio-tiles .tile .tile-info h2 {
-  color: #c14d9c;
-  transform: translate(-110%);
+  color: #b63582;
+  transform: translate(0, 20px);
+  font-weight: bold;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   transition-delay: 0.2s;
@@ -1057,7 +1091,7 @@ a:hover {
 
 @keyframes tileIn {
   0% {
-    transform: translate(-100%, 200%) scale(0);
+    transform: translate(0, 0) scale(0.95);
     opacity: 0;
   }
 
