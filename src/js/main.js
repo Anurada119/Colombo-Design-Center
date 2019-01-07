@@ -1,5 +1,3 @@
-console.log('wtf');
-
 $(document).ready(function(){
     $('.regiter-please').on('click', function(e){
         e.preventDefault();
@@ -14,9 +12,30 @@ $(document).ready(function(){
 
 var mobileMenu = function(){
 
+    
+
+    var navHeigh = $('.new-main-nav').height();
+
+    
+    $('.wrapper').css({
+        'margin-top' : '-'+navHeigh+'px' 
+    });
+
     $('.menu-icon').on('click', function(){
         $(this).toggleClass('opened-menu');
-        $('.mobile-nav').toggleClass('opened-nav');
-    })
 
-}
+        $('.new-main-nav').toggleClass('show-nav');
+
+        if($('.new-main-nav').hasClass('show-nav')){
+            $('.wrapper').css({
+                'margin-top' : '0px' 
+            });
+        }else{
+            $('.wrapper').css({
+                'margin-top' : '-'+navHeigh+'px' 
+            });
+        }
+
+    });
+
+};
