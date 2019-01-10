@@ -197,6 +197,8 @@ a:hover {
 .social-lang {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 
 .social-lang .langs,
@@ -205,15 +207,15 @@ a:hover {
 }
 
 .social-lang .lang {
-  padding-right: 15px;
+  margin-top: 40px;
 }
 
 .social-lang .lang .langs li a {
-  padding-left: 15px;
+  padding: 0 12px;
 }
 
 .social-lang .social .socials li a {
-  padding-left: 15px;
+  padding: 0 12px;
 }
 
 .social-lang .social .socials li a svg {
@@ -282,7 +284,8 @@ a:hover {
   flex-direction: column;
 }
 
-.intro h1, .intro p {
+.intro h1,
+  .intro p {
   text-align: right;
 }
 
@@ -373,35 +376,20 @@ a:hover {
   cursor: pointer;
 }
 
-.portfolio-tiles .tile .tile-inner.tile1 {
-  background: url(../images/tile1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+.portfolio-tiles .tile .tile-inner figure {
+  width: 100%;
+  height: 100%;
 }
 
-.portfolio-tiles .tile .tile-inner.tile2 {
-  background: url(../images/tile2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-}
-
-.portfolio-tiles .tile .tile-inner.tile3 {
-  background: url(../images/tile3.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-}
-
-.portfolio-tiles .tile .tile-inner.tile4 {
-  background: url(../images/tile4.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+.portfolio-tiles .tile .tile-inner figure img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .portfolio-tiles .tile .tile-info {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -413,6 +401,11 @@ a:hover {
   transform: translate(0);
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .portfolio-tiles .tile .tile-info h2 {
@@ -442,7 +435,8 @@ a:hover {
   font-size: 20px;
 }
 
-.innovation-section h2, .innovation-section h1 {
+.innovation-section h2,
+.innovation-section h1 {
   font-size: 75px;
   line-height: 70px;
 }
@@ -461,7 +455,7 @@ a:hover {
 }
 
 .innovation-section.home-banner .lets-create-section {
-  padding: 70px 0 20px;
+  padding: 40px 0 20px;
 }
 
 .innovation-section .work-flow-section {
@@ -1267,15 +1261,39 @@ a:hover {
   .new-main-nav .nav-level-1 {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .new-main-nav .nav-level-1 .services-block {
+    background: rgba(0, 0, 0, 0.05);
+    padding-top: 32px;
   }
 
   .new-main-nav .nav-level-1 > li {
-    margin-right: 64px;
+    margin-right: 0px;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+
+  .new-main-nav .nav-level-1 > li > a {
+    font-size: 18px;
+    display: block;
+    width: 100%;
   }
 
   .new-main-nav .nav-level-1 .main-link {
     margin-bottom: 16px;
     display: block;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .new-main-nav .nav-level-2 {
+    margin-bottom: 40px;
   }
 
   .split-section .left-column {
@@ -1455,7 +1473,8 @@ a:hover {
     align-items: center;
   }
 
-  .intro h1, .intro p {
+  .intro h1,
+    .intro p {
     text-align: center;
   }
 
@@ -1593,12 +1612,25 @@ a:hover {
     border: none !important;
   }
 
-  .portfolio-tiles .tile {
-    width: 100%;
-    margin-bottom: 20px;
+  .portfolio-section {
+    padding-top: 0;
   }
 
-  .innovation-section h2, .innovation-section h1 {
+  .portfolio-tiles .tile {
+    width: calc(100% / 3);
+    margin-bottom: 0px;
+  }
+
+  .portfolio-tiles .tile-inner {
+    height: 105px;
+  }
+
+  .portfolio-tiles .tile-info {
+    display: none !important;
+  }
+
+  .innovation-section h2,
+  .innovation-section h1 {
     font-size: 35px;
     line-height: 30px;
     text-align: center;
@@ -1719,27 +1751,11 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 350px;
+    height: 105px;
   }
 
   .portfolio-tiles .tile .tile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-content: center;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    background: #fff;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .portfolio-tiles .tile .tile-info h2 {
-    padding-top: 10px;
-  }
-
-  .portfolio-tiles .tile .tile-info p {
-    color: #676766;
+    display: none;
   }
 
   .project-process .project-grid .prject-grid-main-img {

@@ -4,6 +4,10 @@ $(document).ready(function(){
         $(this).hide();
         $('.login-screen').toggleClass('active');
         $('.register-screen').toggleClass('active');
+
+        $('.wrapper').css({
+            'margin-top' : '-'+navHeigh+'px' 
+        });
     });
 
     mobileMenu();
@@ -12,10 +16,7 @@ $(document).ready(function(){
 
 var mobileMenu = function(){
 
-    
-
     var navHeigh = $('.new-main-nav').height();
-
     
     $('.wrapper').css({
         'margin-top' : '-'+navHeigh+'px' 
